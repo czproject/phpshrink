@@ -36,6 +36,8 @@ PhpShrink requires PHP 5.3.0 or later.
 
 ------------------------------
 
+Based on [class](https://github.com/nette/build-tools/blob/master/tasks/minify.php#L63) by [David Grudl](http://davidgrudl.com/).
+
 David Grudl, http://davidgrudl.com/
 <br>Jan Pecha, http://janpecha.iunas.cz/
 

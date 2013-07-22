@@ -2,6 +2,9 @@
 	namespace Cz;
 	
 	
+	/**
+	 * @link	https://github.com/nette/build-tools/blob/master/tasks/minify.php#L63
+	 */
 	class PhpShrink
 	{
 		public $firstComment = NULL;
