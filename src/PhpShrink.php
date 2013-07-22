@@ -20,6 +20,10 @@
 
 
 
+		/**
+		 * @param	string
+		 * @return	self
+		 */
 		public function addFile($file)
 		{
 			$this->files[realpath($file)] = TRUE;
@@ -32,6 +36,11 @@
 		}
 
 
+		/**
+		 * @param	string
+		 * @param	string|NULL  for __DIR__ and dirname(__FILE__)
+		 * @return	self
+		 */
 		public function addContent($content, $dir = NULL)
 		{
 			$tokens = token_get_all($content);
@@ -203,6 +212,9 @@
 
 
 
+		/**
+		 * @return	string
+		 */
 		public function getOutput()
 		{
 			if ($this->namespace !== NULL) {
