@@ -36,6 +36,22 @@
 		}
 
 
+
+		/**
+		 * @param	string[]
+		 * @return	self
+		 */
+		public function addFiles(array $files)
+		{
+			foreach($files as $file)
+			{
+				$this->addFile($file);
+			}
+			
+			return $this;
+		}
+
+
 		/**
 		 * @param	string
 		 * @param	string|NULL  for __DIR__ and dirname(__FILE__)
