@@ -52,6 +52,7 @@
 		}
 
 
+
 		/**
 		 * @param	string
 		 * @param	string|NULL  for __DIR__ and dirname(__FILE__)
