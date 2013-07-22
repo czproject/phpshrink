@@ -37,4 +37,5 @@ PhpShrink requires PHP 5.3.0 or later.
 ------------------------------
 
 David Grudl, http://davidgrudl.com/
+<br>Jan Pecha, http://janpecha.iunas.cz/
 

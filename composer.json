@@ -6,6 +6,10 @@
 		{
 			"name": "David Grudl",
 			"homepage": "http://davidgrudl.com"
+		},
+		{
+			"name": "Jan Pecha",
+			"homepage": "http://janpecha.iunas.cz/"
 		}
 	],
 	"require": {
