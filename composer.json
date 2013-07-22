@@ -1,0 +1,17 @@
+{
+	"name": "czproject/phpshrink", # EDIT THIS
+	"type": "library",
+	"description": "Library for shrinking of PHP code.",
+	"authors": [
+		{
+			"name": "David Grudl",
+			"homepage": "http://davidgrudl.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0"
+	},
+	"autoload": {
+		"classmap": ["src/"]
+	}
+}
