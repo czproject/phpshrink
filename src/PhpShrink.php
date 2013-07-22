@@ -27,6 +27,8 @@
 			// special handling for Connection.php && Statement.php
 			$content = preg_replace('#class \S+ extends \\\\?PDO.+#s', "if (class_exists('PDO')){ $0 }", $content);
 			$this->addContent($content, dirname($file));
+			
+			return $this;
 		}
 
 
@@ -195,6 +197,8 @@
 
 				$this->output .= $token;
 			}
+			
+			return $this;
 		}
 
 
