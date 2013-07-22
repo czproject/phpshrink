@@ -54,6 +54,16 @@
 
 
 		/**
+		 * @return	array|NULL  [filepath => TRUE]
+		 */
+		public function getFiles()
+		{
+			return $this->files;
+		}
+
+
+
+		/**
 		 * @param	string
 		 * @param	string|NULL  for __DIR__ and dirname(__FILE__)
 		 * @return	self
