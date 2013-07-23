@@ -7,18 +7,25 @@
 	 */
 	class PhpShrink
 	{
+		/** @var  array|NULL  first PhpDoc-comment token */
 		public $firstComment = NULL;
 
+		/** @var  bool */
 		public $useNamespaces = FALSE;
 
+		/** @var  string */
 		private $output = '';
 
+		/** @var  array  [expr => TRUE] */
 		private $uses = array();
 
+		/** @var  bool */
 		private $inPHP;
 
+		/** @var  string|NULL */
 		private $namespace;
 
+		/** @var  array  [real-filepath => TRUE] */
 		private $files;
 
 		/** @var  callback[] */
