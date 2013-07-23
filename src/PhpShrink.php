@@ -21,6 +21,9 @@
 
 		private $files;
 
+		/** @var  callback[] */
+		private $filters;
+
 
 
 		/**
@@ -31,9 +34,7 @@
 		{
 			$this->files[realpath($file)] = TRUE;
 			$content = file_get_contents($file);
-			// special handling for Connection.php && Statement.php
-			$content = preg_replace('#class \S+ extends \\\\?PDO.+#s', "if (class_exists('PDO')){ $0 }", $content);
-			$this->addContent($content, dirname($file));
+			$this->addContent($content, $file);
 			
 			return $this;
 		}
@@ -68,11 +69,13 @@
 
 		/**
 		 * @param	string
-		 * @param	string|NULL  for __DIR__ and dirname(__FILE__)
+		 * @param	string|NULL  filepath (for __DIR__, dirname(__FILE__) & filters)
 		 * @return	self
 		 */
-		public function addContent($content, $dir = NULL)
+		public function addContent($content, $file = NULL)
 		{
+			$dir = dirname($file);
+			$content = $this->applyFilters($content, $file);
 			$tokens = token_get_all($content);
 
 			if ($this->useNamespaces) { // find namespace
@@ -252,6 +255,47 @@
 				$this->namespace = NULL;
 			}
 			return $this->output;
+		}
+		
+		
+		
+		/**
+		 * @param	callback
+		 * @return	self
+		 */
+		public function addFilter($callback)
+		{
+			$this->filters[] = $callback;
+			return $this;
+		}
+		
+		
+		
+		/**
+		 * @param	string
+		 * @param	string|NULL
+		 * @return	string
+		 */
+		private function applyFilters($content, $file = NULL)
+		{
+			foreach((array) $this->filters as $filter)
+			{
+				$content = $filter($content, $file);
+			}
+			
+			return $content;
+		}
+		
+		
+		
+		/**
+		 * @param	string
+		 * @return	string|NULL
+		 */
+		public static function filterPdo($content, $file = NULL)
+		{
+			// special handling for Connection.php && Statement.php
+			$content = preg_replace('#class \S+ extends \\\\?PDO.+#s', "if (class_exists('PDO')){ $0 }", $content);
 		}
 	}
 
