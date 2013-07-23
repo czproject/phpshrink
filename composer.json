@@ -1,5 +1,5 @@
 {
-	"name": "czproject/phpshrink", # EDIT THIS
+	"name": "czproject/phpshrink",
 	"type": "library",
 	"description": "Library for shrinking of PHP code.",
 	"authors": [
