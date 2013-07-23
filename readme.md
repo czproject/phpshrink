@@ -15,7 +15,7 @@ Usage
 	$shrinker->addFile('libs.php');
 	
 	// or add PHP code
-	$shrinker->addFile('<?php echo "hello!";');
+	$shrinker->addContent('<?php echo "hello!";');
 	
 	// get shrinked code
 	$code = $shrinker->getOutput();
