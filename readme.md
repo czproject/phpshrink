@@ -14,6 +14,12 @@ Usage
 	$shrinker->addFile('myfile.php');
 	$shrinker->addFile('libs.php');
 	
+	// add array of files
+	$shrinker->addFiles(array(
+		'functions.php',
+		'exceptions.php',
+	));
+	
 	// or add PHP code
 	$shrinker->addContent('<?php echo "hello!";');
 	
