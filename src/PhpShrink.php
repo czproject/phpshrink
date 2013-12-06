@@ -1,7 +1,7 @@
 <?php
 	namespace Cz;
-	
-	
+
+
 	/**
 	 * @link	https://github.com/nette/build-tools/blob/master/tasks/minify.php#L63
 	 */
@@ -42,7 +42,7 @@
 			$this->files[realpath($file)] = TRUE;
 			$content = file_get_contents($file);
 			$this->addContent($content, $file);
-			
+
 			return $this;
 		}
 
@@ -58,7 +58,7 @@
 			{
 				$this->addFile($file);
 			}
-			
+
 			return $this;
 		}
 
@@ -246,7 +246,7 @@
 
 				$this->output .= $token;
 			}
-			
+
 			return $this;
 		}
 
@@ -263,9 +263,9 @@
 			}
 			return $this->output;
 		}
-		
-		
-		
+
+
+
 		/**
 		 * @param	callback
 		 * @return	self
@@ -275,9 +275,9 @@
 			$this->filters[] = $callback;
 			return $this;
 		}
-		
-		
-		
+
+
+
 		/**
 		 * @param	string
 		 * @param	string|NULL
@@ -289,12 +289,12 @@
 			{
 				$content = $filter($content, $file);
 			}
-			
+
 			return $content;
 		}
-		
-		
-		
+
+
+
 		/**
 		 * @param	string
 		 * @return	string|NULL
