@@ -5,11 +5,11 @@
 	"authors": [
 		{
 			"name": "David Grudl",
-			"homepage": "http://davidgrudl.com"
+			"homepage": "https://davidgrudl.com"
 		},
 		{
 			"name": "Jan Pecha",
-			"homepage": "http://janpecha.iunas.cz/"
+			"homepage": "https://www.janpecha.cz/"
 		}
 	],
 	"require": {
